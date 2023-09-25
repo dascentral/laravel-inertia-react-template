@@ -1,9 +1,10 @@
 {
     "private": true,
-    "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
+        "eslint": "eslint --fix .",
+        "eslint:check": "eslint .",
         "stylelint": "stylelint 'resources/**/*.css' --fix",
         "stylelint:check": "stylelint 'resources/**/*.css'",
         "prettier": "prettier --write .",
