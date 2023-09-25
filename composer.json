@@ -10,8 +10,15 @@
         "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/breeze": "^1.23",
         "laravel/framework": "^10.10",
+        "laravel/horizon": "^5.21",
         "laravel/sanctum": "^3.2",
+        "laravel/telescope": "^4.16",
         "laravel/tinker": "^2.8",
+        "predis/predis": "^2.2",
+        "spatie/laravel-backup": "^8.3",
+        "spatie/laravel-data": "^3.9",
+        "spatie/laravel-ray": "^1.33",
+        "spatie/laravel-view-models": "^1.5",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
@@ -20,8 +27,10 @@
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
+        "nunomaduro/larastan": "^2.0",
         "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-faker": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.2",
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
