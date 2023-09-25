@@ -3,7 +3,11 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "stylelint": "stylelint 'resources/**/*.css' --fix",
+        "stylelint:check": "stylelint 'resources/**/*.css'",
+        "prettier": "prettier --write .",
+        "prettier:check": "prettier --check ."
     },
     "devDependencies": {
         "@headlessui/react": "^1.4.2",
