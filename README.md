@@ -1,66 +1,168 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel + Inertia.js + React Template
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository contains a template for a brand new [Laravel 10](https://laravel.com/docs/10.x) application that leverages the [Laravel Breeze](https://laravel.com/docs/master/starter-kits#laravel-breeze) starter kit.
 
-## About Laravel
+## Getting Started
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Install Node.js Dependencies
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+yarn install
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Install PHP Depdencies
 
-## Learning Laravel
+```bash
+composer install
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Configure the Laravel Environment
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+cp .env.example .env
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Generate an Application Key
 
-## Laravel Sponsors
+```bash
+php artisan key:generate
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Create a Local Database
 
-### Premium Partners
+With your application now properly configured, you will need to create a new MySQL database. This template assumes the use of a database named `laravel_inertia_react_template`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Migrate & Seed the Database
 
-## Contributing
+```bash
+php artisan migrate:fresh --seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Start the Develoment Server
 
-## Code of Conduct
+```bash
+yarn dev
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+If using [Laravel Herd](https://herd.laravel.com/) or [Laravel Valet](https://laravel.com/docs/master/valet), your site should now be live: http://laravel-inertia-react-template.test.
 
-## Security Vulnerabilities
+## Technical Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+In addition to Laravel, this application makes use of the following technologies.
 
-## License
+-   [Inertia.js](https://inertiajs.com)
+-   [React](https://react.dev)
+-   [Tailwind CSS](https://tailwindcss.com/docs/guides/laravel)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Composer Packages (PHP)
+
+I typically add the following PHP packages to any Laravel application.
+
+#### Core Dependencies — First-Party
+
+-   [Laravel Horizon](https://laravel.com/docs/10.x/horizon)
+-   [Laravel Telescope](https://laravel.com/docs/10.x/telescope)
+
+#### Core Dependencies — Third-Party
+
+-   [predis/predis](https://github.com/predis/predis)
+-   [spatie/laravel-backup](https://spatie.be/docs/laravel-backup)
+-   [spatie/laravel-data](https://spatie.be/docs/laravel-data)
+-   [spatie/laravel-ray](https://spatie.be/docs/ray/v1/installation-in-your-project/laravel)
+-   [spatie/laravel-view-models](https://github.com/spatie/laravel-view-models)
+
+#### Development Dependencies
+
+-   [nunomaduro/larastan](https://github.com/nunomaduro/larastan)
+-   [pestphp/pest](https://pestphp.com/)
+-   [pestphp/pest-plugin-faker](https://pestphp.com/docs/plugins#faker)
+-   [pestphp/pest-plugin-laravel](https://pestphp.com/docs/plugins#laravel)
+
+### Node.js Dependencies
+
+I typically add the following NPM packages to any Laravel application.
+
+#### Tailwind CSS Plugins
+
+-   [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio)
+-   [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) — Installed via the Laravel Breeze starter kit
+-   [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
+
+#### ESLint
+
+I use [ESLint](https://eslint.org/) to find and fix problems with JavaScript code. I add the following configs & plugins.
+
+-   [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+-   [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+-   [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
+-   [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss)
+-   [vite-plugin-eslint](https://github.com/gxmari007/vite-plugin-eslint)
+
+#### Prettier
+
+I use [Prettier](https://prettier.io/docs/en/index.html) to ensure consistent code formatting. I add the [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) plugin to automatically sort classes based upon Tailwind's [recommended class order](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted).
+
+#### Stylelint
+
+I use [Stylelint](https://stylelint.io/) to lint CSS, avoid errors, and enforce conventions. I use [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) to enforce modern convensions found in the [CSS specifications](https://www.w3.org/Style/CSS/current-work).
+
+## Application Customizations
+
+*None just yet.*
+
+## Script
+
+Are you starting from scratch? Want to see the commands that got us here?
+
+```bash
+# Install a new Laravel application in a Git repository with Pest PHP & Laravel Breeze.
+# Instruct Laravel Breeze to install the "React with Inertia" stack.
+laravel new laravel-inertia-react-template --git --pest --breeze --stack=react
+cd laravel-inertia-react-template
+
+# Install first-party composer packages
+composer require laravel/horizon
+composer require laravel/telescope
+
+# Install third-party composer packages
+composer require predis/predis
+composer require spatie/laravel-backup
+composer require spatie/laravel-data
+composer require spatie/laravel-ray
+composer require spatie/laravel-view-models
+composer require nunomaduro/larastan:^2.0 --dev
+composer require pestphp/pest-plugin-faker --dev
+composer require pestphp/pest-plugin-laravel --dev
+
+# Install Tailwind CSS plugins
+yarn add -D @tailwindcss/aspect-ratio
+yarn add -D @tailwindcss/typography
+
+# Install ESLint & plugins
+yarn add -D eslint
+yarn add -D eslint-config-prettier
+yarn add -D eslint-plugin-prettier
+yarn add -D eslint-plugin-tailwindcss
+yarn add -D eslint-plugin-react
+
+# Install Prettier & plugins
+yarn add -D prettier
+yarn add -D prettier-plugin-tailwindcss
+
+# Install Stylelint
+yarn add -D stylelint
+yarn add -D stylelint-config-standard
+
+# Install Vite plugins
+yarn add -D @vitejs/plugin-react
+yarn add -D vite-plugin-eslint
+
+# Install Laravel Horizon
+php artisan horizon:install
+
+# Install Laravel Telescope
+php artisan telescope:install
+
+# Migrate the database
+php artisan migrate
+```
