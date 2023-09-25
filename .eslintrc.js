@@ -22,6 +22,7 @@ module.exports = {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     // TODO: Enable this class and debug error
     // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/234
+    'react/prop-types': 0,
     'tailwindcss/no-custom-classname': 'off',
   },
   settings: {
