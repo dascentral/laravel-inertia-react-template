@@ -23,12 +23,7 @@ export default function Authenticated({ user, header, children }) {
               </div>
 
               <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <NavLink
-                  href={route('dashboard')}
-                  active={route().current('dashboard')}
-                >
-                  Dashboard
-                </NavLink>
+                <NavLink href="/dashboard">Dashboard</NavLink>
               </div>
             </div>
 
@@ -60,14 +55,8 @@ export default function Authenticated({ user, header, children }) {
                   </Dropdown.Trigger>
 
                   <Dropdown.Content>
-                    <Dropdown.Link href={route('profile.edit')}>
-                      Profile
-                    </Dropdown.Link>
-                    <Dropdown.Link
-                      href={route('logout')}
-                      method="post"
-                      as="button"
-                    >
+                    <Dropdown.Link href="/profile">Profile</Dropdown.Link>
+                    <Dropdown.Link href="/logout" method="post" as="button">
                       Log Out
                     </Dropdown.Link>
                   </Dropdown.Content>
@@ -120,12 +109,7 @@ export default function Authenticated({ user, header, children }) {
           }
         >
           <div className="space-y-1 pb-3 pt-2">
-            <ResponsiveNavLink
-              href={route('dashboard')}
-              active={route().current('dashboard')}
-            >
-              Dashboard
-            </ResponsiveNavLink>
+            <ResponsiveNavLink href="/dashboard">Dashboard</ResponsiveNavLink>
           </div>
 
           <div className="border-t border-gray-200 pb-1 pt-4 dark:border-gray-600">
@@ -139,14 +123,8 @@ export default function Authenticated({ user, header, children }) {
             </div>
 
             <div className="mt-3 space-y-1">
-              <ResponsiveNavLink href={route('profile.edit')}>
-                Profile
-              </ResponsiveNavLink>
-              <ResponsiveNavLink
-                method="post"
-                href={route('logout')}
-                as="button"
-              >
+              <ResponsiveNavLink href="/profile">Profile</ResponsiveNavLink>
+              <ResponsiveNavLink method="post" href="/logout" as="button">
                 Log Out
               </ResponsiveNavLink>
             </div>
