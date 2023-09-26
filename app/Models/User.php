@@ -33,6 +33,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected $appends = [
+        'name',
+    ];
+
     protected function name(): Attribute
     {
         return Attribute::make(
