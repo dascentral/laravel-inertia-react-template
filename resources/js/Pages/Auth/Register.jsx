@@ -33,20 +33,36 @@ export default function Register() {
 
       <form onSubmit={submit}>
         <div>
-          <InputLabel htmlFor="name" value="Name" />
+          <InputLabel htmlFor="first" value="First" />
 
           <TextInput
-            id="name"
-            name="name"
-            value={data.name}
+            id="first"
+            name="first"
+            value={data.first}
             className="mt-1 block w-full"
-            autoComplete="name"
+            autoComplete="given-name"
             isFocused={true}
-            onChange={(e) => setData('name', e.target.value)}
+            onChange={(e) => setData('first', e.target.value)}
             required
           />
 
-          <InputError message={errors.name} className="mt-2" />
+          <InputError message={errors.first} className="mt-2" />
+        </div>
+
+        <div className="mt-4">
+          <InputLabel htmlFor="last" value="Last" />
+
+          <TextInput
+            id="last"
+            name="last"
+            value={data.last}
+            className="mt-1 block w-full"
+            autoComplete="family-name"
+            onChange={(e) => setData('last', e.target.value)}
+            required
+          />
+
+          <InputError message={errors.last} className="mt-2" />
         </div>
 
         <div className="mt-4">
