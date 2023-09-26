@@ -58,9 +58,6 @@
     "format": [
       "./vendor/bin/pint"
     ],
-    "lint": [
-      "@analyze"
-    ],
     "test": [
       "@format",
       "@analyze",
