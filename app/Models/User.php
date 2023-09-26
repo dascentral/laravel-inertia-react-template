@@ -41,4 +41,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->first . ' ' . $this->last,
+        );
+    }
 }
